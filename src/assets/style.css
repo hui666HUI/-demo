@@ -1,0 +1,298 @@
+/*直接用一个class来控制显示与否*/
+.hidden {
+  display: none;
+}
+/*动画*/
+@keyframes moveDown {
+  0% {
+    /* 定义动画开始的状态 */
+    transform: translateY(0);
+  }
+  100% {
+    /* 定义动画结束的状态 */
+    transform: translateY(400px);
+  }
+}
+@keyframes moveUp {
+  0% {
+    /* 定义动画开始的状态 */
+    transform: translateY(400px);
+  }
+  100% {
+    /* 定义动画结束的状态 */
+    transform: translateY(0);
+  }
+}
+#lr{
+  position:fixed;
+  top: 10px;
+  left: 60px;
+  width: 1600px;
+  height:700px;
+  overflow: hidden;/*如果出界选择不显示*/
+  align-items: center;
+}
+.scrollPlace{
+  position:absolute;
+  top: 30px;
+  left: 60px;
+  width: 1600px;
+  height:700px;
+}
+.moveDown{
+  animation: moveDown 0.5s forwards;
+}
+.moveUp{
+  animation: moveUp 0.5s forwards;
+}
+
+
+/*设置登录和注册的输入框 设置方位格式*/
+.contain {
+  display: flex;/*为了下面两个东西，这个我也不知道有啥用*/
+  flex-direction: column;/*设置成竖排*/
+  align-items: center;/*主要是为了按钮居中显示*/
+  
+  position: absolute;/*绝对定位*/
+  /*top: calc(var(--canvasheight) );这是一个计算方位的东东*/
+  top:280px;
+  left:500px;
+  margin: 10px 20px 10px 20px;/*边框*/
+}
+/*设置注册框的方位  PS:这段代码源于我技术不好，注册和登录两个框框摆不到一起*/
+#movebox2{
+  position: absolute;
+  top: -40px;
+  left: 0px;
+} 
+/*登录和注册输入框 设置大小尺寸*/
+#login-section input,
+#register-section input {
+  width: 400px;
+  height: 30px;
+  /*margin-bottom: 5px;*/
+}
+/*登录和注册 文字的方位 共用的*/
+.loginregister {
+  position: absolute;
+  top: 230px;
+  left: 900px;
+  /*transform: translateX(+150px);*/
+}
+/*登录和注册按钮*/
+#button{
+  width: 390px;
+  height: 30px;
+  margin-top: 10px;
+}
+/*设置登录和注册的文字样式*/
+#register-heading,
+#login-heading{
+  font-size: 32px;
+  color: aliceblue;
+}
+
+
+
+/*介绍悬浮窗页面*/
+#introduce{
+  position: absolute;
+  top:100px;
+  left:-1200px;
+  
+}
+#introduceImg{
+  border-radius: 200px; /* 设置边框的圆角 */
+  opacity: 0.6;/*设置图片透明度*/
+}
+@keyframes moveRight {
+  0% {
+    /* 定义动画开始的状态 */
+    transform: translateX(-100px);
+  }
+  100% {
+    /* 定义动画结束的状态 */
+    transform: translateX(300px);
+  }
+}
+.moveRight{
+  animation: moveRight 0.5s forwards;
+}
+@keyframes moveLeft {
+  0% {
+    /* 定义动画开始的状态 */
+    transform: translateX(300px);
+  }
+  100% {
+    /* 定义动画结束的状态 */
+    transform: translateX(-100px);
+  }
+}
+.moveLeft{
+  animation: moveLeft 0.5s forwards;
+}
+#introduceText{
+  width: 410px;
+  height: 400px;
+  position: absolute;
+  top:100px;
+  left:500px;
+}
+.introduceSmallText{
+  width: 400px;
+  height: 30px;
+  color: rgb(241, 238, 203);
+  position: relative;
+  left:500px;
+}
+
+/* title的艺术字(图片) */
+#title1{
+  /*width: 410px;*/
+  height: 150px;
+  position: absolute;
+  top:0px;
+  left:500px;
+}
+#title2{
+  /*width: 410px;*/
+  height: 150px;
+  position: absolute;
+  top:100px;
+  left:600px;
+}
+
+/* 设置背景图片 */
+body {
+  background-image: url('../img/bg4.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  /* 如果要自定义背景位置，可以使用 background-position 属性 */
+  background-position: 0px 0px; 
+}
+
+
+
+/* 上下浮动的动画 */
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/* 登录和注册页用户引导图片 */
+#guideUp{
+  /*width: 410px;*/
+  height: 60px;
+  position: absolute;
+  top:650px;
+  left:1190px;
+  animation: floatAnimation 1s infinite;
+}
+#guideDown{
+  /*width: 410px;*/
+  height: 60px;
+  position: absolute;
+  top:650px;
+  left:1190px;
+  animation: floatAnimation 1s infinite;
+}
+
+
+/*忘记密码的a标签*/
+#forget{
+  color: aliceblue;
+  position: absolute;
+  top: 230px;
+}
+
+/*设置微信、飞书登录按钮*/
+#weixin,
+#feishu{
+  border-radius: 50%;/*将图片边框变为圆形*/
+  width: 50px;
+}
+#weixin:hover,
+#feishu:hover {
+  cursor: pointer;/*鼠标悬浮时变为可点击的手势*/
+  border: 2px solid red; /* 设置边框为红色，宽度为 2px */
+}
+#weixin{
+  position: absolute;
+  top:630px;
+  left:790px;
+}
+#feishu{
+  position: absolute;
+  top:630px;
+  left:720px;
+}
+#anotherlogin{
+  position: absolute;
+  font-size: 15px;
+  top:580px;
+  left:720px;
+  color: aliceblue;
+}
+/* 定义微信和飞书登录弹窗 */
+.modal{
+  position: absolute;
+  top:0px;
+  left:0px;
+  /* width: 100%; */
+  /* height: 100%; */
+}
+.weixinLogin{
+  background-color: aquamarine;
+  position: absolute;
+  top:200px;
+  left:100px;
+  width: 800px;
+  height: 400px;
+  opacity: 0.6;/*设置图片透明度*/
+}
+.feishuLogin{
+  background-color:blue;
+  position: absolute;
+  top:200px;
+  left:100px;
+  width: 800px;
+  height: 400px;
+  opacity: 0.6;/*设置图片透明度*/
+}
+.anotherLoginBtn{
+  position: absolute;
+  top:600px;
+  left:600px;
+}
+/*登录页面弹窗遮罩层*/
+.modal-mask{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999; /* 设置一个很大的值，确保遮罩层在最上层 */
+  background-color: rgba(0, 0, 0, 0.6); /* 半透明黑色背景 */
+}
+
+
+
+/*.popup{
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  top:250px;
+  left:600px;
+  overflow: hidden;如果出界选择不显示
+}
+#weixinQRcode,
+#feishuQRcode{
+  width: 200px;
+  height: 200px;
+}*/
