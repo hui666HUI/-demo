@@ -21,11 +21,13 @@ const moveLeft = () => {
         <img src="../img/introduce.png" alt="介绍图片" id="introduceImg">
         <form>
         <v-container id="introduceText" class="moveLeft">
-          <h3 class="introduceSmallText">text1text1text1text1text1text1text1text1</h3>
-          <h3 class="introduceSmallText">text2text2text2text2text2</h3>
-          <h3 class="introduceSmallText">text3text3text3text3text3text3text3text3text3</h3>
-          <h3 class="introduceSmallText">text4</h3>
-          <h3 class="introduceSmallText">text5text5text5text5</h3>
+          <h3 class="introduceSmallText">“华南虎的物资管理系统是我见过最好用</h3>
+          <h3 class="introduceSmallText">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;的物资管理系统”</h3>
+          <h3 class="introduceSmallText">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;------鲁迅</h3>
+          <h3 class="introduceSmallText"></h3>
+          <h3 class="introduceSmallText">“华南虎的物资管理系统的网页设计</h3>
+          <h3 class="introduceSmallText">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;非常优雅”</h3>
+          <h3 class="introduceSmallText">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;------贝聿铭</h3>
         </v-container>
         </form>
     </v-container>

@@ -1,4 +1,8 @@
 {
+  "code": 200,
+  "msg": "登录成功",
+  "data": "1x2LKk4BYnfcVVSz",
+
   "name": "vue-base02",
   "version": "0.0.0",
   "private": true,

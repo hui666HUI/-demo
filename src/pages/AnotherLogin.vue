@@ -1,16 +1,8 @@
 <script setup lang="ts">
 import {ref} from "vue";
-import LoginModal from "../components/LoginModal.vue";
+import axios from 'axios'
 
-const showAnotherLoginFeishu = ref(false)
 
-const showFeishu = () => {
-  showAnotherLoginFeishu.value=true
-};
-const closeFeishu = () => {
-    console.debug('click');
-    showAnotherLoginFeishu.value=false
-}
 const dialog = ref(false)
 </script>
 
@@ -34,16 +26,9 @@ const dialog = ref(false)
         </v-card>
       </v-dialog>
       
-
-      <img src="../img/飞书logo.png" alt="飞书登录" id="feishu" @click="showFeishu">
-      <v-container v-show="showAnotherLoginFeishu" class="modal-mask">
-        <v-container calss="modal">
-            <LoginModal
-              :showAnotherLoginFeishu="showAnotherLoginFeishu"
-            ></LoginModal>
-          <v-btn color="pink white--text" @click="closeFeishu" v-show="showAnotherLoginFeishu" class="anotherLoginBtn">close</v-btn>
-        </v-container>
-      </v-container>
+      <a href="https://uzimg.scutbot.icu/feishu/oauth">
+      <img src="../img/飞书logo.png" alt="飞书登录" id="feishu">
+      </a>
     </v-container>
 </template>
 

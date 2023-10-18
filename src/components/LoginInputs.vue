@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import {ref, onMounted, onBeforeUnmount} from "vue";
 import { defineProps } from 'vue';
+import axios from 'axios'
 
 const valid = ref(true)
 const email = ref('')
@@ -18,7 +19,56 @@ const passwordRulesL = [
 ]
 
 const onClickLoginL = () => {
+  const instance=axios.create({
+      baseURL:"https://uzimg.scutbot.icu",//这里填的是前缀，到时候要改
+      //timeout: 1000,
+      headers:{"Content-Type":"application/json"}
+     })
 
+     instance.post("/login",{//这里填的是后缀，到时候要改
+        email:email.value,
+        passwd:password.value
+      })
+      .then(response =>{
+        console.log(response.data);
+        alert(response.data.msg);
+      })
+      .catch(error => {
+        alert("登录失败");
+        console.log(error);
+        console.log(email);
+        console.log(password.value);
+      })
+      .finally(function(){
+        console.log("跑一下");
+      });
+      console.log("润润润");
+}
+const onClickForget = () => {
+  const instance=axios.create({
+      baseURL:"https://uzimg.scutbot.icu",//这里填的是前缀，到时候要改
+      //timeout: 1000,
+      headers:{"Content-Type":"application/json"}
+     })
+
+     instance.post("/ChangePasswd",{//这里填的是后缀，到时候要改
+        uuid:email.value,
+        passwd:password.value
+      })
+      .then(response =>{
+        console.log(response.data);
+        alert(response.data.msg);
+      })
+      .catch(error => {
+        alert("登录失败");
+        console.log(error);
+        console.log(email);
+        console.log(password.value);
+      })
+      .finally(function(){
+        console.log("跑一下");
+      });
+      console.log("润润润");
 }
 onMounted(() => {
   // 组件挂载完成时的逻辑
@@ -26,26 +76,6 @@ onMounted(() => {
 
 console.debug("这是一条调试信息L");
 
-// const scroll = (event) => {
-//   event.preventDefault();//阻止默认行为，这里是页面滚动
-//   const delta = event.deltaY;
-//   if (delta < 0) {
-      
-//       console.debug("滚动1L");
-//       loginMoveUpIsActive.value=true,
-//       loginMoveDownIsActive.value=false,
-//       loginHiddenIsActive.value=false
-
-//   } else if (delta > 0) {
-
-//     console.debug("滚动2L");
-//       loginMoveUpIsActive.value= false,
-//       loginMoveDownIsActive.value=true,
-//       loginHiddenIsActive.value=true
-    
-
-//   }
-// }
 
 const { loginHiddenIsActive, loginMoveUpIsActive, loginMoveDownIsActive } = defineProps({
   loginHiddenIsActive: Boolean,
@@ -53,9 +83,6 @@ const { loginHiddenIsActive, loginMoveUpIsActive, loginMoveDownIsActive } = defi
   loginMoveDownIsActive: Boolean
 });
 
-// const loginHiddenIsActive = defineProps(['loginHiddenIsActive'])
-// const loginMoveUpIsActive = defineProps(['loginMoveUpIsActive'])
-// const loginMoveDownIsActive = defineProps(['loginMoveDownIsActive'])
 </script>
 
 <template>
@@ -69,7 +96,7 @@ const { loginHiddenIsActive, loginMoveUpIsActive, loginMoveDownIsActive } = defi
         <v-container  id="movebox1">
         <v-container  id="login-section" class="contain">
           <v-text-field v-model="email" :rules="emailRulesL" :counter="10" label="邮箱" required hide-details></v-text-field>
-          <v-text-field v-model="password" :rules="passwordRulesL" label="密码" hide-details required></v-text-field>
+          <v-text-field v-model="password" :rules="passwordRulesL" label="密码" hide-details required type="password"></v-text-field>
           <v-spacer>
           <v-btn :disabled="!valid" color="primary" @click="onClickLoginL" id="button">登录</v-btn>
           </v-spacer>
@@ -100,7 +127,7 @@ const { loginHiddenIsActive, loginMoveUpIsActive, loginMoveDownIsActive } = defi
           <v-card-actions>
             <v-spacer></v-spacer>
             <v-btn color="blue-darken-1" variant="text" @click="dialog = false">Close</v-btn>
-            <v-btn color="blue-darken-1" variant="text" @click="dialog = false">Save</v-btn>
+            <v-btn color="blue-darken-1" variant="text" @click="onClickForget">Save</v-btn>
           </v-card-actions>
           </v-card>
           </v-dialog>

@@ -84,12 +84,18 @@
   width: 390px;
   height: 30px;
   margin-top: 10px;
+  font-family: YouYuan,SimHei;
+  font-size: 20px;
+  border-radius: 11px;
+  /* transform: rotate(45deg); 直接旋转按钮，太秀了*/
 }
 /*设置登录和注册的文字样式*/
 #register-heading,
 #login-heading{
-  font-size: 32px;
+  font-size: 37px;
   color: aliceblue;
+  font-family: YouYuan,SimHei;
+  font-weight: 400;
 }
 
 
@@ -139,7 +145,7 @@
   left:500px;
 }
 .introduceSmallText{
-  width: 400px;
+  width: 380px;
   height: 30px;
   color: rgb(241, 238, 203);
   position: relative;
@@ -164,11 +170,12 @@
 
 /* 设置背景图片 */
 body {
-  background-image: url('../img/bg4.jpg');
+  /* background-image: url('../img/bg.jpg'); */
   background-repeat: no-repeat;
   background-size: 100%;
   /* 如果要自定义背景位置，可以使用 background-position 属性 */
   background-position: 0px 0px; 
+  background-color:rgba(0, 0, 0, 0.6);
 }
 
 
@@ -280,19 +287,3 @@ body {
   z-index: 9999; /* 设置一个很大的值，确保遮罩层在最上层 */
   background-color: rgba(0, 0, 0, 0.6); /* 半透明黑色背景 */
 }
-
-
-
-/*.popup{
-  position: absolute;
-  width: 250px;
-  height: 250px;
-  top:250px;
-  left:600px;
-  overflow: hidden;如果出界选择不显示
-}
-#weixinQRcode,
-#feishuQRcode{
-  width: 200px;
-  height: 200px;
-}*/
